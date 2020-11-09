@@ -1,14 +1,24 @@
-# spring-boot-user-registration
+# HABIT BUDDY
 
-**Turkce Medium:** https://medium.com/@kamer.dev/spring-boot-uygulamas%C4%B1nda-%C3%BCye-kayd%C4%B1-ve-giri%C5%9Fi-3dac83837c9d
+#### REMOTE DATABASE ACCESS
 
-**English Medium:** https://medium.com/@kamer.dev/spring-boot-user-registration-and-login-43a33ea19745
+To access the remote database use the following credentials:
+
+*username*: GRNVZr9ti1
+
+*password*: 38O7SNyCxc
+
+The remote database webpage: https://remotemysql.com/phpmyadmin/index.php
+
+#### PROJECT EMAIL
+
+*email*: habitbuddy.elte@gmail.com
+
+*password* IntMedia2020
+
+An email is used to send the confirmation messages to newly registered users
 
 
-**Turkce (Kendi Blogum):** https://kamerelciyar.com/spring-boot-uygulamasinda-uye-kaydi-ve-girisi/
+##### How to build and run?
 
-**English (My Own Blog)** https://kamerelciyar.com/spring-boot-user-registration-and-login/
-
-[EN] It's a project for those who want to add user registration and login for a Spring Boot Application. I ommited exception-handling parts so it's not suitable for real usages. You should add exception handling. If you want to try you should change Spring Mail config in application.yml file. Any questions or suggestions, you can reach me on kamer[at]kamerelciyar.com.
-
-[TR] Bu proje, Spring Boot uygulamanıza üye kaydı ve girişi eklemek için kullanabileceğiniz bir projedir. Klonlayıp kullanmak için application.yml dosyasındaki Spring Mail ayarlarını değiştirmeniz gerekmektedir.
+The project was built using [Maven](https://maven.apache.org/) and [IntelliJ IDEA Ultimate edition](https://www.jetbrains.com/idea/) (free via student status confirmation).
