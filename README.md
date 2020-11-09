@@ -14,7 +14,7 @@ The remote database webpage: https://remotemysql.com/phpmyadmin/index.php
 
 *email*: habitbuddy.elte@gmail.com
 
-*password* IntMedia2020
+*password*: IntMedia2020
 
 An email is used to send the confirmation messages to newly registered users
 
