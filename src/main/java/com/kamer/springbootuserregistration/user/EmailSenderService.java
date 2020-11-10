@@ -3,6 +3,7 @@ package com.kamer.springbootuserregistration.user;
 import lombok.AllArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class EmailSenderService {
 
-	private JavaMailSender javaMailSender;
+	private JavaMailSender javaMailSender = new JavaMailSenderImpl();
 
 	@Async
 	public void sendEmail(SimpleMailMessage email) {

@@ -40,4 +40,16 @@ class ConfirmationToken {
 		this.createdDate = LocalDate.now();
 		this.confirmationToken = UUID.randomUUID().toString();
 	}
+
+	public String getConfirmationToken() {
+		return confirmationToken;
+	}
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
 }

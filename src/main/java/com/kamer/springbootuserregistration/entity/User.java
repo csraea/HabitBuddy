@@ -84,4 +84,16 @@ public class User implements UserDetails {
 	public boolean isEnabled() {
 		return enabled;
 	}
+
+	public void setPassword(String encryptedPassword) {
+		this.password = encryptedPassword;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEnabled(boolean b) {
+		enabled = b;
+	}
 }
