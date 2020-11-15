@@ -21,13 +21,13 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UserService implements UserDetailsService {
 
-	private UserRepository userRepository;
+	private final UserRepository userRepository;
 
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-	private ConfirmationTokenService confirmationTokenService;
+	private final ConfirmationTokenService confirmationTokenService;
 
-	private EmailSenderService emailSenderService;
+	private final EmailSenderService emailSenderService;
 
 	void sendConfirmationMail(String userMail, String token) {
 

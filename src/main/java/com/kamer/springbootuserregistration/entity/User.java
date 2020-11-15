@@ -33,11 +33,13 @@ public class User implements UserDetails {
 
 	private String name;
 
-	private String surname;
+	//private String surname;
 
 	private String email;
 
 	private String password;
+	
+	private Integer scores;
 
 	@Builder.Default
 	private UserRole userRole = UserRole.USER;
@@ -84,16 +86,7 @@ public class User implements UserDetails {
 	public boolean isEnabled() {
 		return enabled;
 	}
-
-	public void setPassword(String encryptedPassword) {
-		this.password = encryptedPassword;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEnabled(boolean b) {
-		enabled = b;
+	public Integer getScores() {
+		return scores;
 	}
 }

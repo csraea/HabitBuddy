@@ -14,7 +14,7 @@ import java.util.Optional;
 @AllArgsConstructor
 class ConfirmationTokenService {
 
-	private ConfirmationTokenRepository confirmationTokenRepository;
+	private final ConfirmationTokenRepository confirmationTokenRepository;
 
 	void saveConfirmationToken(ConfirmationToken confirmationToken) {
 

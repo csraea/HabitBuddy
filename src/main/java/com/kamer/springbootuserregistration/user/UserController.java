@@ -18,9 +18,9 @@ import java.util.Optional;
 @AllArgsConstructor
 public class UserController {
 
-	private UserService userService;
+	private final UserService userService;
 
-	private ConfirmationTokenService confirmationTokenService;
+	private final ConfirmationTokenService confirmationTokenService;
 
 	@GetMapping("/sign-in")
 	String signIn() {
