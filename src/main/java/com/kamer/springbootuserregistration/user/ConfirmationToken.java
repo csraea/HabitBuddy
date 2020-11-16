@@ -41,15 +41,18 @@ class ConfirmationToken {
 		this.confirmationToken = UUID.randomUUID().toString();
 	}
 
-	public String getConfirmationToken() {
-		return confirmationToken;
-	}
-
 	public User getUser() {
+		// TODO Auto-generated method stub
 		return this.user;
 	}
 
+	public String getConfirmationToken() {
+		// TODO Auto-generated method stub
+		return this.confirmationToken;
+	}
+
 	public Long getId() {
+		// TODO Auto-generated method stub
 		return this.id;
 	}
 }
