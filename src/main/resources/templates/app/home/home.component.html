@@ -1,0 +1,22 @@
+<div class="container" *ngIf="isLoggedIn">
+
+  <h1 class="title">Welcome to HabitBuddy!</h1>
+  <header class="jumbotron">
+    <h2>Ready to get started tracking your habits with a buddy? Make sure you are logged in!</h2><br>
+    <h3>No account yet? Well, click on the button and make one, then!</h3>
+    
+  </header>
+  
+</div>
+
+
+<div class="container" *ngIf="!isLoggedIn">
+
+  <h1 class="title">Welcome to HabitBuddy!</h1>
+  <header class="jumbotron">
+    <h2>Click on the habits on your left to see how well you and your buddy are doing!</h2><br>
+    <h3>No habits? Go add some then!</h3>
+    
+  </header>
+  
+</div>

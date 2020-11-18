@@ -1,0 +1,114 @@
+<div id="app">
+  <div *ngIf="!isLoggedIn">
+    <nav class="navbar navbar-expand  navigation" >
+      <!--  <a href="#" class="nav-brand">HabitBuddy</a> --> 
+  <!--     <ul class="navbar-nav mr-auto" routerLinkActive="active">
+        <li class="nav-item">
+          <a href="/home" class="nav-link" routerLink="home">Home </a>
+        </li>
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+        </li>
+      </ul> -->
+      <ul class="navbar-nav mr-auto" routerLinkActive="active">
+        <li class="nav-item home">
+          <a href="/home" class=" nav-link " routerLink="home">Home </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto" >
+        <li class="nav-item">
+          <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a href="/login" class="nav-link" routerLink="login">Login</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        </li>
+        <li class="nav-item">
+          <a href class="nav-link" (click)="logout()">LogOut</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+
+      
+    <router-outlet ></router-outlet> 
+    
+    </div>
+  </div>
+
+  <div *ngIf="isLoggedIn" class="loggedinapp">
+    <div class="navbar navigation-loggedin">
+      <div class="greeting">
+        <h4>Hi, Admin {{ username }}!</h4>
+        <a href class="" (click)="edit()">📝</a>
+        <a href class="" (click)="logout()">🚪</a>
+      </div>  
+      <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_1x.png"
+        class="profile-img-card"
+      />
+
+      <div class="habit-list">
+        <ul class="navbar-nav" >
+          <li class=" habit" >
+            <a href="/profile" class="nav-link" routerLink="profile">Habit #1</a>
+          </li>
+          <li class="habit">
+            <a href="/profile" class="nav-link" routerLink="profile">Habit #2</a>
+          </li>
+          <li class="habit">
+            <a href="/profile" class="nav-link" routerLink="profile">Habit #3</a>
+          </li>
+          <li class="habit">
+            <a href="/profile" class="nav-link" routerLink="profile"> &nbsp;</a>
+          </li>
+          <li class="habit">
+            <a href="/profile" class="nav-link" routerLink="profile"> &nbsp;</a>
+          </li>
+          <li class="habit">
+            <a href="/profile" class="nav-link" routerLink="profile"> &nbsp;</a>
+          </li>
+        </ul>
+
+
+      </div>
+
+
+      <a href="/profile" class="nav-link my-nav-button" routerLink="profile">Add new habit</a>
+      <a href="/profile" class="nav-link my-nav-button" routerLink="profile">Admin dashboard</a>
+      <br>
+
+      <div class="store">
+        <a href="/profile" class="nav-link my-nav-button" routerLink="profile">Store</a>
+        <span class="points"> Total points:<span><b>&nbsp; {{points}} 1234</b></span></span>
+
+      </div>
+     
+
+
+
+
+    </div>
+
+
+    <div class="container">
+
+      
+      <router-outlet ></router-outlet> 
+      
+      </div>
+
+  </div>
+  
+</div>
