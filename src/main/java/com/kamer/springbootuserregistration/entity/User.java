@@ -33,11 +33,13 @@ public class User implements UserDetails {
 
 	private String name;
 
-	private String surname;
+	//private String surname;
 
 	private String email;
 
 	private String password;
+	
+	private Integer scores;
 
 	@Builder.Default
 	private UserRole userRole = UserRole.USER;
@@ -58,6 +60,9 @@ public class User implements UserDetails {
 	@Override
 	public String getPassword() {
 		return password;
+	}
+	public Long getId() {
+		return id;
 	}
 
 	@Override
@@ -84,16 +89,22 @@ public class User implements UserDetails {
 	public boolean isEnabled() {
 		return enabled;
 	}
-
-	public void setPassword(String encryptedPassword) {
-		this.password = encryptedPassword;
-	}
-
-	public String getEmail() {
-		return email;
+	public Integer getScores() {
+		return scores;
 	}
 
 	public void setEnabled(boolean b) {
-		enabled = b;
+		this.enabled=b;
+		
+	}
+
+	public void setPassword(String encryptedPassword) {
+		this.password=encryptedPassword;
+		
+	}
+
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return this.email;
 	}
 }

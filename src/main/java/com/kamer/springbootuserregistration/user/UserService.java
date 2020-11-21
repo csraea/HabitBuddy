@@ -78,4 +78,7 @@ public class UserService implements UserDetailsService {
 		confirmationTokenService.deleteConfirmationToken(confirmationToken.getId());
 
 	}
+	boolean checkIfExists(String email) {
+		return userRepository.findByEmail(email).isPresent();
+	}
 }
