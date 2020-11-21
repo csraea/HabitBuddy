@@ -1,5 +1,5 @@
 <div id="app">
-  <div *ngIf="!isLoggedIn">
+  <div *ngIf="isLoggedIn">
     <nav class="navbar navbar-expand  navigation" >
       <!--  <a href="#" class="nav-brand">HabitBuddy</a> --> 
   <!--     <ul class="navbar-nav mr-auto" routerLinkActive="active">
@@ -46,7 +46,7 @@
     </div>
   </div>
 
-  <div *ngIf="isLoggedIn" class="loggedinapp">
+  <div *ngIf="!isLoggedIn" class="loggedinapp">
     <div class="navbar navigation-loggedin">
       <div class="greeting">
         <h4>Hi, Admin {{ username }}!</h4>
@@ -85,8 +85,8 @@
       </div>
 
 
-      <a href="/profile" class="nav-link my-nav-button" routerLink="profile">Add new habit</a>
-      <a href="/profile" class="nav-link my-nav-button" routerLink="profile">Admin dashboard</a>
+      <a href="/newHabit" class="nav-link my-nav-button" routerLink="newHabit">Add new habit</a>
+      <a *ngIf="showAdminBoard" href="/profile" class="nav-link my-nav-button" routerLink="newHabit">Admin dashboard</a>
       <br>
 
       <div class="store">
@@ -107,7 +107,7 @@
       
       <router-outlet ></router-outlet> 
       
-      </div>
+    </div>
 
   </div>
   

@@ -1,0 +1,31 @@
+
+.habit-list
+{
+    width: 90%;
+    min-width: 200px;
+    margin: 20px 6px;
+    -webkit-margin-collapse: collapse;
+    overflow-y:auto;
+    max-height: 30%;
+    border: 2px #111 groove;
+}
+
+
+.habit
+{
+    margin: 0px;
+    padding: 2px 20px;
+    background-color: azure;
+    color: black;
+    border: darkgray 1px solid;
+
+}
+
+
+.habit-list .nav-link
+{
+    
+    color: black;
+    font-size: large;
+    padding: 10px;
+}
