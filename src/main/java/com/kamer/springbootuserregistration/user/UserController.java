@@ -34,9 +34,11 @@ public class UserController {
 
 	@GetMapping("/sign-in")
 	String signIn() {
+		
 
 		return "app/login/login.component";
 	}
+	
 	@PostMapping("/sign-in")
     public String showBoard(@RequestParam(value = "email") String email, 
                             @RequestParam(value = "password") String password, ModelMap model) {
@@ -50,8 +52,9 @@ public class UserController {
         model.put("password", password);
         return "redirect: /board-user";
     }
+	
 	@GetMapping("/board-user")
-	String boardUser() {
+	String boardUserPage() {
 
 		return "app/board-user/board-user.component";
 	}
@@ -67,6 +70,10 @@ public class UserController {
 	String signUp(User user) {
 
 		userService.signUpUser(user);
+		//userService.setBuddy(user);
+		user.setScores(0);
+		//userService.updateScore(user,88);
+		
 
 		return "redirect:/sign-in";
 	}

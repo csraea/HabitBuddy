@@ -10,7 +10,7 @@ import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+//Not used anymore
 @Entity
 @Table(name="user_habit_track")
 @IdClass(UserHabitTracking.class)
@@ -59,6 +59,13 @@ public class UserHabitTracking implements Serializable{
 	}
 	
 	UserHabitTracking(){
+		
+	}
+	public UserHabitTracking(User user, Long habitId,Long milestoneId){
+		this.user=user;
+		this.habitId=habitId;
+		this.milestoneId=milestoneId;
+		this.status=false;
 		
 	}
 	
