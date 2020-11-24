@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity(name = "UsersHabits")
 @IdClass(value = UserHabit.class)
@@ -22,6 +23,11 @@ public class UserHabit implements Serializable{
     @JoinColumn(name = "id_habit")
 	private Habit habit;
 	
+	@OneToOne
+    @JoinColumn(name = "id_map")
+	private Map map;
+	
+
 	@Column(name = "count_milestones")
 	private int counter;
 	
@@ -47,6 +53,13 @@ public class UserHabit implements Serializable{
 
 	public void setCounter(int counter) {
 		this.counter = counter;
+	}
+	public Map getMap() {
+		return map;
+	}
+
+	public void setMap(Map map) {
+		this.map = map;
 	}
 	public UserHabit(User user, Habit habit) {
 		this.user=user;
