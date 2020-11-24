@@ -16,7 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="habit_milestone")
+@Table(name="Milestones")
 @IdClass(HabitMilestone.class)
 public class HabitMilestone implements Serializable{
 	
@@ -27,6 +27,7 @@ public class HabitMilestone implements Serializable{
 	@ManyToOne(targetEntity = Habit.class, fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false, name = "habit_id")
 	private Habit habit;
+	private int score;
 	
 	@Column(name="milestone_name")
 	private String milestoneName;
@@ -42,7 +43,7 @@ public class HabitMilestone implements Serializable{
 	public Long getHabitId() {
 		return this.id;
 	}
-	private int score;
+	
 	public Long getId() {
 		return id;
 	}
