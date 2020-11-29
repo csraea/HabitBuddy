@@ -1,0 +1,20 @@
+{
+    "habits": [
+      {
+        "id": 1,
+        "name": "Reading",
+        "milestones": [
+            {    
+                    "order":1,
+                    "description": "30 minutes"
+            },
+             {  
+                "order":2,
+                "description": "45 minutes"
+              }
+        ]
+    }
+      
+    
+    ]
+  }

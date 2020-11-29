@@ -1,33 +1,38 @@
 <div>
-   <!--  <form [formGroup]="form" (ngSubmit)="submit()">
-     --><div class="habit-select">
+     <form [formGroup]="form" (ngSubmit)="onSubmit()">
+     <div class="habit-select">
         
 
       <label>Please choose a habit you'd like to start with:
-        <select name="habits" multiple size="8" class="habit-list" ng-model="habit" >
-            <option ng-repeat="habit in allHabits" value="{{habit.id}}">{{habit.name}}</option>
+        <select name="habits" multiple size="8" class="habit-list"
+         (ngModelChange)="onChange($event)"
+         [(ngModel)]="newUserHabit.habit" >
+            <option ng-repeat="habit in allHabits" value="{{habit}}">{{habit.name}}</option>
 
-            <option class="habit nav-link" value="dog">Habit #1</option>
+           <!--  <option class="habit nav-link" value="dog">Habit #1</option>
             <option class="habit nav-link" value="dog">Habit #2</option>
             <option class="habit nav-link" value="dog">Habit #3</option>
             <option class="habit nav-link" value="dog">Habit #4</option>
-            <option class="habit nav-link" value="dog">Habit #5</option>
+            <option class="habit nav-link" value="dog">Habit #5</option> -->
 
          
         </select>
       </label>
-
+<!-- ng-change="getSubcategoryData(milestone)" -->
       <label>Please choose the milestone you'd like to start with:
-      <!-- <select  watch name="milestone" id="milestone"
-        ng-model="milestone" ng-change="getSubcategoryData(milestone)">
-          <option ng-repeat="milestone in allmMilestones" value="{{milestone.id}}">{{milestone.name}}</option>
-      </select> -->
+      <select  watch name="milestone" id="milestone"
+      [(ngModel)]="newUserHabit.currentMilestone" 
+        ng-change="getSubcategoryData(milestone)"
+        >
+         
+          <option ng-repeat="milestone in allMilestones" value="{{milestone.order}}-1">{{milestone.name}}</option>
+      </select> 
       </label>
 
         </div>
 
     </form>
-    <button>submit</button>
+    <button>Start new habit!</button>
 
 
 </div>
