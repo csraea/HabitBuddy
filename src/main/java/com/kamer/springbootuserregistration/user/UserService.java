@@ -1,6 +1,7 @@
 package com.kamer.springbootuserregistration.user;
 
 import com.kamer.springbootuserregistration.entity.User;
+
 import lombok.AllArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.MessageFormat;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -77,5 +79,21 @@ public class UserService implements UserDetailsService {
 
 		confirmationTokenService.deleteConfirmationToken(confirmationToken.getId());
 
+	}
+	public Optional<Long> findBuddy(User user) {
+		Optional<Long> potentialBuddies=userRepository.findBuddy(user.getId());
+		return potentialBuddies;	
+		
+	}
+	void setBuddy(User user) {
+		Optional<Long> buddyId=findBuddy(user);
+		userRepository.updateBuddy(user.getId(),buddyId);
+		
+	}
+	boolean checkIfExists(String email) {
+		return userRepository.findByEmail(email).isPresent();
+	}
+	void updateScore(User user,Integer score) {
+		userRepository.updateScore(user.getId(), score);
 	}
 }
