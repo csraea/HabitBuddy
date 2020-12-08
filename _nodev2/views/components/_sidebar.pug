@@ -1,0 +1,46 @@
+
+<div class=" navigation-loggedin sidebar-big">
+    
+    <h2>Hi,  #{user.username}  </h4>
+    <div class="greeting">
+        div
+            img(src=`/img/avatars/avatar0.png` alt="" class="profile-img-card")
+            -//<img id="profile-img"    src="//ssl.gstatic.com/accounts/ui/avatar_1x.png" class="profile-img-card"   />
+        <div class="side-buttons sidebar-big">
+            <a href="/avatar-select" class="edit-avatar-button" >📝</a>
+            <a class="logout--button" >🚪</a>
+        </div>      
+    </div>  
+    
+    <div class="habit-list">
+        <ul class="" >
+            each item in trackedHabits
+                <li class=" habit" >
+                    a(href=`/habit/${item.id}` class="nav-link" title=`${item.habit_name}`) #{item.habit_name}
+                </li>
+
+        </ul>
+
+
+    </div>
+
+
+    <a href="/newHabit" class="nav-link my-nav-button" >Add new habit</a>
+    -if (user.userRole==='ADMIN')
+        <li><a href="/admin" >#{user.userRole} stuff</a></li>
+    
+    
+
+    <div class="store">
+        <a href="/store" class="nav-link my-nav-button store-button" >Store</a>
+        <span class="points"> Total points:<span><b>&nbsp; #{user.scores} </b></span></span>
+
+    </div>
+    
+
+
+
+
+
+
+</div>
