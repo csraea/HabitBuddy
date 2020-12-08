@@ -15,7 +15,7 @@ export class UserService {
     return this.http.get(`${baseUrl}/`, { responseType: 'text' });
   }
 
-  getUserBoard(id: number): Observable<any> {
+  getUserBoard(id: number=1): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`, { responseType: 'text' });
   }
 

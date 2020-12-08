@@ -4,10 +4,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../_services/user.service';
 import { HabitService } from '../_services/habit.service';
-import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, NgForm,ReactiveFormsModule  } from '@angular/forms';
 import { Userhabit } from '../models/userhabit.model';
 import { UserhabitService } from '../_services/userhabit.service';
 import { Router } from '@angular/router';
+import { Habit } from '../models/habit.model';
 
 
 
@@ -21,14 +22,20 @@ export class NewHabitComponent implements OnInit {
   constructor(private tokenStorageService: TokenStorageService,
     private formBuilder: FormBuilder,  private router: Router,
     private userService: UserService,private habitService: HabitService,
-    private userhabitService: UserhabitService) { }
+    private userhabitService: UserhabitService) { 
+
+
+      this.form = formBuilder.group({
+        
+    });
+    }
 
 
 
   isLoggedIn = false;
   submitted = false;
   errorMessage = '';
-  allHabits= this.habitService.getAll();
+  allHabits;
   allMilestones=[];
   form: FormGroup;
   newUserHabit: Userhabit = new Userhabit();
@@ -36,7 +43,7 @@ export class NewHabitComponent implements OnInit {
   
   ngOnInit(): void {
 
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
+   /*  this.isLoggedIn = !!this.tokenStorageService.getToken();
       if (this.isLoggedIn) {
         const user = this.tokenStorageService.getUser();
 
@@ -50,9 +57,11 @@ export class NewHabitComponent implements OnInit {
           'currentMilestone': [null],
           //'desc': [null, Validators.required],
         });  
-      }
+      } */
 
-
+      this.allHabits= this.habitService.getAll();  
+      console.log(this.allHabits)
+      console.log(this.habitService.get(1))
     
   
   }
@@ -65,11 +74,16 @@ export class NewHabitComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-    
+    console.log(this.habitService.getAll())
     this.submitted = true;
     this.save(); 
 }
 
+onSave(){
+
+  this.allHabits= this.habitService.getAll();  
+      console.log(this.allHabits)
+}
 
 save() {
   this.userhabitService

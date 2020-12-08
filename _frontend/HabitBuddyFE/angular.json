@@ -60,9 +60,11 @@
           }
         },
         "serve": {
+          "proxyConfig": "proxy.conf.json",
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "HabitBuddyFE:build"
+            "browserTarget": "HabitBuddyFE:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {

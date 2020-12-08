@@ -1,7 +1,7 @@
 {
     "habits": [
       {
-        "id": 1,
+        "habitid": 1,
         "name": "Reading",
         "milestones": [
             {    

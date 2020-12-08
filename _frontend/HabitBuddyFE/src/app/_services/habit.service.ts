@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Habit } from '../models/habit.model';
 
 
-const baseUrl = 'http://localhost:8080/api/v1/habits';
+const baseUrl = 'http://localhost:3000/api/v1/habits';
 
 
 
@@ -16,9 +16,9 @@ export class HabitService {
   constructor(private http: HttpClient) { }
 
 
-  getAll(): Observable<any> {
-    
-    return this.http.get<Habit[]>(baseUrl);
+  getAll(): any {
+    return this.http.get('http://localhost:3000/habits');
+    //return this.http.get<Habit[]>(baseUrl);
   }
 
   get(id): Observable<any> {
